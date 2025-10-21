@@ -10,7 +10,7 @@ in
   home.stateVersion = "25.05";
 
   imports = [
-    M "editors/vim/vim.nix"
+    (M "editors/vim/vim.nix")
   ];
 
   home.packages = with pkgs;[
