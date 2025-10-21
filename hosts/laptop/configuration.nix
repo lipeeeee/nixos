@@ -3,10 +3,9 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  imports =
-    [
+  imports = [
       /etc/nixos/hardware-configuration.nix
-    ];
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -48,6 +47,7 @@
   ];
   
   # List services that you want to enable:
+  services.openssh.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -56,8 +56,5 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  services.openssh.enable = true;
-
   system.stateVersion = "25.05"; # DO NOT change
 }
-

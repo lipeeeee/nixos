@@ -17,9 +17,6 @@ in
     tree
   ];
 
-  home.file = {
-  };
-
   home.sessionVariables = {
   };
 
