@@ -28,6 +28,9 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+	      extraSpecialArgs = {
+	        hostName = hostname;
+	      };
               
               # Specify which user's config to apply on this host
               users.${username} = import ./hosts/${hostname}/home.nix;
