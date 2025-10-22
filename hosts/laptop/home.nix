@@ -11,6 +11,7 @@ in
 
   imports = [
     (M "editors/vim/vim.nix")
+    (M "hyprland/hyprland.nix")
   ];
 
   home.packages = with pkgs;[
