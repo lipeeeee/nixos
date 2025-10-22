@@ -4,7 +4,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # shitty hack::: enable stuff here that is not available on home-manager 
-  # programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
 
   imports = [
       /etc/nixos/hardware-configuration.nix
@@ -31,8 +31,7 @@
   users.users.lipe = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [];
   };
 
   programs.firefox.enable = true;

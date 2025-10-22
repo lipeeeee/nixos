@@ -2,11 +2,8 @@
 
 {
   # import hyprland url
-  imports = [ inputs.hyprland.homeManagerModules.default ];
 
-  programs.hyprland.enable = true;
   home.packages = with pkgs; [
-    hyprland
     kitty
     wofi
   ];

@@ -11,15 +11,35 @@ in
 
   imports = [
     (M "editors/vim/vim.nix")
+
     (M "desktop/hyprland/hyprland.nix")
     (M "desktop/waybar/waybar.nix")
+    (M "desktop/swww/swww.nix")
   ];
 
   home.packages = with pkgs;[
     tree
+    htop
   ];
 
   home.sessionVariables = {
+  };
+
+  # Setup userdirs we create (prob not worth dividing this into a module)
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true; 
+    
+    pictures = "${config.home.homeDirectory}/Pictures"; 
+    download = "${config.home.homeDirectory}/Downloads"; 
+
+    # do not create these
+    desktop = null;
+    documents = null;
+    music = null;
+    templates = null;
+    videos = null;
+    publicShare = null;
   };
 
   # Let Home Manager install and manage itself.
