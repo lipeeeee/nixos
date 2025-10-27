@@ -1,201 +1,214 @@
+/* colors defined at top for easy configuring */
+@define-color background #2C2A24;
+@define-color second-background #3A372F;
+@define-color text #DDD5C4;
+@define-color borders #A0907A;
+@define-color focused #D08B57;
+@define-color focused2 #BFAA80;
+@define-color color1 #7699A3;
+@define-color color2 #8D7AAE;
+@define-color color3 #78997A;
+@define-color urgent #B05A5A;
+
+
+/* font declared */
 * {
-  border: none;
-  border-radius: 4px;
-  /* `ttf-font-awesome` is required to be installed for icons */
-  font-family: "Roboto Mono Medium", Helvetica, Arial, sans-serif;
-
-  /* adjust font-size value to your liking: */
-  font-size: 10px;
-
-  min-height: 0;
+  font-family: "Iosevka Nerd Font";
+  font-size: 15px;
 }
 
+#custom-openbracket,
+#custom-closebracket {
+  margin: 0 5px;
+}
+
+/* idk what all this does */
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #ffffff;
+  background-color: transparent;
+  border-bottom: 0;
+  color: @text;
+  transition: background-color 0.5s;
 }
 
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+
+/* configuring the modules */
+.modules-left {
+  margin: 10px 0 0 10px;
+  padding: 0 0 0 7px;
+  background-color: @background;
+  border: 2px solid @focused;
+}
+
+.modules-center {
+  margin: 10px 0 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @background;
+  border: 2px solid @focused;
+}
+
+.modules-right {
+  margin: 10px 10px 0 0;
+  padding: 0 10px 0 10px;
+  background-color: @background;
+  border: 2px solid @focused;
+}
+
+
+/* whats this?? */
+button {
+  border: none;
+}
+
+
+/* left island */
+
+/* menu pannel */
+#custom-arch,
+#custom-powerprofile,
+#custom-themeswitcher {
+  padding-right: 10px;
+  padding-left: 5px;
+  font-size: 15px;
+  border-radius: 8px;
+}
+
+#custom-arch:hover {
+  color: @color1;
+}
+
+#custom-powerprofile:hover {
+  color: @color1
+}
+
+#custom-themeswitcher:hover {
+  color: @color1;
+}
+
+/* workspace pannel */
 #workspaces button {
-  color: #ffffff;
-  box-shadow: inset 0 -3px transparent;
+  min-width: 0;
+  padding: 0 8px 0 8px;
+  background-color: transparent;
+  color: @text;
+  border-radius: 0;
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0 -3px #ffffff;
+  background-color: @second-background;
 }
 
-#workspaces button.focused {
-  background-color: #64727d;
+#workspaces button.active {
+  color: @focused2;
+  background-color: @second-background;
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: @urgent;
 }
 
-#mode {
-  background-color: #64727d;
+/* no idea what this does */
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0;
 }
 
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0;
+}
+
+/* media player */
+#mpris {
+  margin: 0 0 0 5px;
+  padding: 0 9px;
+  background-color: @background;
+  color: @text;
+}
+
+#mpris.playing {
+  background-color: @color3;
+  border-radius: 2px;
+  color: @background;
+}
+
+
+/* center module  */
+#window {
+  padding: 0 5px;
+}
+
+/* Right Island */
+
+/* module general styles */
 #clock,
 #battery,
 #cpu,
 #memory,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#mpd {
+#custom-clipboard,
+#custom-bluetooth,
+#network {
   padding: 0 10px;
-  margin: 6px 3px;
-  color: #000000;
 }
 
-#window,
-#workspaces {
-  margin: 0 4px;
+#clock:hover,
+#battery:hover,
+#custom-cpu:hover,
+#custom-clipboard:hover,
+#custom-bluetooth:hover,
+#network:hover,
+#idle_inhibitor:hover,
+#custom-swaync:hover,
+#backlight:hover,
+#wireplumber:hover {
+  color: @color1;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
+#idle_inhibitor {
+  padding: 0 10px 0 0;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
+#custom-powerprofile {
+  padding: 0 8px 0 4px;
 }
 
-#clock {
-  background-color: #000000;
-  color: white;
+/* Remaining Modules */
+#backlight,
+#wireplumber {
+  padding: 0 5px;
 }
 
-#battery {
-  background-color: #000000;
-  color: white;
+#wireplumber.muted {
+  background-color: @color2;
 }
 
-#battery.charging {
-  color: #ffffff;
-  background-color: #000000;
+#custom-swaync {
+  padding: 0 10px 0 5px;
+  font-size: 16px;
+  /* same scale as other icons */
+  color: @text;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: @focused2 ;
+  color: @background;
+}
+
+#battery.critical:not(.charging) {
+  background-color: @urgent;
+  color: @text;
+  animation: blink 0.5s steps(12) infinite alternate;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @second-background;
+    color: @text;
   }
-}
-
-#battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-label:focus {
-  background-color: #000000;
-}
-
-#cpu {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#memory {
-  background-color: #000000;
-  color: white;
-}
-
-#backlight {
-  background-color: #000000;
-  color: white;
-}
-
-#network {
-  background-color: #000000;
-  color: white;
-}
-
-#network.disconnected {
-  background-color: #f53c3c;
-}
-
-#pulseaudio {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#pulseaudio.muted {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#custom-media {
-  background-color: #66cc99;
-  color: #2a5c45;
-  min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-  background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-  background-color: #ffa000;
-}
-
-#temperature {
-  background-color: #f0932b;
-}
-
-#temperature.critical {
-  background-color: #eb4d4b;
-}
-
-#tray {
-  background-color: #2980b9;
-}
-
-#idle_inhibitor {
-  background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-  background-color: #ecf0f1;
-  color: #2d3436;
-}
-
-#mpd {
-  background-color: #66cc99;
-  color: #2a5c45;
-}
-
-#mpd.disconnected {
-  background-color: #f53c3c;
-}
-
-#mpd.stopped {
-  background-color: #90b1b1;
-}
-
-#mpd.paused {
-  background-color: #51a37a;
-}
-
-#language {
-  background: #bbccdd;
-  color: #333333;
-  padding: 0 5px;
-  margin: 6px 3px;
-  min-width: 16px;
 }

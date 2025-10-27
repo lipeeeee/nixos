@@ -16,7 +16,7 @@
   # linking misc stuff
   home.file.".icons" = {
     target = ".icons";
-    source = /.icons;
+    source = ./icons;
     recursive = true;
     force = true;
   };
