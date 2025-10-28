@@ -104,7 +104,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}  {capacity}%",
         "format-full": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": "  {capacity}%",
@@ -113,11 +113,11 @@
     },
 
     "network": {
-        "interface": "wlan0",
-        "format-wifi": "{icon}",
+        "interface": "wlo1",
+        "format-wifi": "{icon}  {essid}",
         "format-ethernet": "󰈀 LAN",
         "format-disconnected": "󰖪",
-        "tooltip-format": "{ipaddr}\n{ssid} ({signalStrength}%)",
+        "tooltip-format": "{ipaddr} ({signalStrength}%)",
         "on-click": "kitty -e nmtui",
         "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ]
     },
