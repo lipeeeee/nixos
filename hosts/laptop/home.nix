@@ -22,6 +22,8 @@ in
   home.packages = with pkgs;[
     tree
     htop
+    cmatrix
+    playerctl
   ];
 
   home.sessionVariables = {
