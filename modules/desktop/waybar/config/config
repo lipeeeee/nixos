@@ -7,6 +7,7 @@
     "group/tray",
     "mpris",
     "pulseaudio",
+    "battery",
     "custom/exit"
   ],
   "margin-top": 0,
@@ -26,7 +27,7 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": ["custom/trayicon", "tray", "cpu", "memory", "hyprland/language" ]
+    "modules": ["custom/trayicon", "tray", "cpu", "memory" ]
   }, 
 
   "custom/trayicon": {
@@ -54,7 +55,8 @@
   "pulseaudio": {
     "format": " {volume}%",
     "format-muted": "vol muted",
-    "on-click": "kitty -T tui_app wiremix"
+    "on-click": "kitty -T tui_app wiremix",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
 
   "custom/exit": {
@@ -82,22 +84,21 @@
     "icon": false 
   },
 
-  "mpd": {
-    "format": " {title}",
-    "format-disconnected": "",
-    "format-stopped": "",
-    "max-length": 30,
-    "interval": 10,
-    "consume-icons": {
-      "on": " " // Icon shows only when "consume" is on
+  "battery": {
+    "states": {
+        "warning": 20,
+        "critical": 10
     },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)",
-    "on-click": "mpc toggle"
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-time": "{H}:{M}",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 5,
   },
 
   "mpris": {
-    "format": "{dynamic}",
+    "format": " {dynamic}",
     "interval": 1,
     "dynamic-len": 40,
     "status-icons": {

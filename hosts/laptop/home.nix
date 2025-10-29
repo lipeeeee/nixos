@@ -24,8 +24,11 @@ in
     htop
     gcc
     cmatrix
+
+    #audio
     playerctl
     wiremix
+    pulseaudio
   ];
 
   home.sessionVariables = {
