@@ -25,6 +25,7 @@ in
     gcc
     cmatrix
     playerctl
+    wiremix
   ];
 
   home.sessionVariables = {

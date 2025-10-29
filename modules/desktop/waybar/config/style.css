@@ -1,214 +1,133 @@
-/* colors defined at top for easy configuring */
-@define-color background #2C2A24;
-@define-color second-background #3A372F;
-@define-color text #DDD5C4;
-@define-color borders #A0907A;
-@define-color focused #D08B57;
-@define-color focused2 #BFAA80;
-@define-color color1 #7699A3;
-@define-color color2 #8D7AAE;
-@define-color color3 #78997A;
-@define-color urgent #B05A5A;
+@define-color surface_container_lowest #050404;
+@define-color surface_container_low    #170e10;
+@define-color surface_container        #392025;
+@define-color primary                  #ba6e7d;
+@define-color on_background            #c3af92;
+@define-color error                    #59313a;
 
-
-/* font declared */
 * {
-  font-family: "Iosevka Nerd Font";
-  font-size: 15px;
+    font-family: "JetBrainsMono NFP";
+    font-size: 16px;
+    min-height: 0;
+    font-weight: bold;
 }
 
-#custom-openbracket,
-#custom-closebracket {
-  margin: 0 5px;
-}
-
-/* idk what all this does */
 window#waybar {
-  background-color: transparent;
-  border-bottom: 0;
-  color: @text;
-  transition: background-color 0.5s;
+    background-color: @surface_container_lowest;
+    color: transparent;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    margin: 0;
+    border-radius: 0px
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
-}
-
-
-/* configuring the modules */
-.modules-left {
-  margin: 10px 0 0 10px;
-  padding: 0 0 0 7px;
-  background-color: @background;
-  border: 2px solid @focused;
-}
-
-.modules-center {
-  margin: 10px 0 0 0;
-  padding: 0 10px 0 10px;
-  background-color: @background;
-  border: 2px solid @focused;
-}
-
-.modules-right {
-  margin: 10px 10px 0 0;
-  padding: 0 10px 0 10px;
-  background-color: @background;
-  border: 2px solid @focused;
-}
-
-
-/* whats this?? */
 button {
-  border: none;
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
 }
 
-
-/* left island */
-
-/* menu pannel */
-#custom-arch,
-#custom-powerprofile,
-#custom-themeswitcher {
-  padding-right: 10px;
-  padding-left: 5px;
-  font-size: 15px;
-  border-radius: 8px;
+#custom-cava {
+    font-family: "Tahoma";
 }
 
-#custom-arch:hover {
-  color: @color1;
+#workspaces {
+    margin: 2 0 0 0;
+    border-radius: 14px;
 }
 
-#custom-powerprofile:hover {
-  color: @color1
-}
-
-#custom-themeswitcher:hover {
-  color: @color1;
-}
-
-/* workspace pannel */
 #workspaces button {
-  min-width: 0;
-  padding: 0 8px 0 8px;
-  background-color: transparent;
-  color: @text;
-  border-radius: 0;
+    background: @surface_container_lowest;
+    color: @primary;
+    padding: 0 4px;
+    margin: 0 2px;
 }
 
-#workspaces button:hover {
-  background-color: @second-background;
+.modules-left {
+    background-color: @surface_container_lowest;
 }
 
+#workspaces button.focused {
+    color: @primary;
+}
 #workspaces button.active {
-  color: @focused2;
-  background-color: @second-background;
+    background-color: @surface_container_low;
+    color: @primary;
+    border-radius: 0;
+    border-top: 2px solid @primary;
+    margin-top: -2px;
 }
 
 #workspaces button.urgent {
-  background-color: @urgent;
+    background-color: @error;
+    color: @surface_container;
 }
 
-/* no idea what this does */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
+#clock {
+    background-color: @surface_container_lowest;
+    color: @primary;
+    padding: 0 12 0 12
 }
 
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
+#clock.date {
+    color: @on_background;
 }
 
-/* media player */
-#mpris {
-  margin: 0 0 0 5px;
-  padding: 0 9px;
-  background-color: @background;
-  color: @text;
+#pulseaudio,
+#mpd,
+#mpris,
+#custom-exit {
+    background-color: @surface_container_lowest;
+    color: @primary;
+    padding: 5 7 5 7
 }
 
-#mpris.playing {
-  background-color: @color3;
-  border-radius: 2px;
-  color: @background;
+#mpd {
+    margin-left: 0;
+    padding-left: 1;
 }
 
-
-/* center module  */
-#window {
-  padding: 0 5px;
-}
-
-/* Right Island */
-
-/* module general styles */
-#clock,
-#battery,
+#tray,
+#language,
 #cpu,
-#memory,
-#custom-clipboard,
-#custom-bluetooth,
-#network {
-  padding: 0 10px;
+#memory {
+    background-color: @surface_container_lowest;
+    color: @primary;
+    padding: 0 7 0 7;
+    margin: 0 2 0 2;
 }
 
+#custom-trayicon {
+    font-size: 20px;
+    margin: 0 0 0 4;
+}
+
+#tray {
+    background-color: @surface_container_lowest;
+    color: @primary;
+    margin: 0 7 0 7;
+}
+
+#custom-exit {
+    padding: 5 10 5 4;
+}
+
+/* hover animations */
+
+/* #pulseaudio:hover,
+#mpd:hover,
+#memory:hover,
+#mpris:hover,
+#cpu:hover,
+#custom-exit:hover,
 #clock:hover,
-#battery:hover,
-#custom-cpu:hover,
-#custom-clipboard:hover,
-#custom-bluetooth:hover,
-#network:hover,
-#idle_inhibitor:hover,
-#custom-swaync:hover,
-#backlight:hover,
-#wireplumber:hover {
-  color: @color1;
-}
+#window:hover,
+#language:hover {
+    background-color: @surface_container_low;
+} */
 
-#idle_inhibitor {
-  padding: 0 10px 0 0;
-}
-
-#custom-powerprofile {
-  padding: 0 8px 0 4px;
-}
-
-/* Remaining Modules */
-#backlight,
-#wireplumber {
-  padding: 0 5px;
-}
-
-#wireplumber.muted {
-  background-color: @color2;
-}
-
-#custom-swaync {
-  padding: 0 10px 0 5px;
-  font-size: 16px;
-  /* same scale as other icons */
-  color: @text;
-}
-
-#battery.charging,
-#battery.plugged {
-  background-color: @focused2 ;
-  color: @background;
-}
-
-#battery.critical:not(.charging) {
-  background-color: @urgent;
-  color: @text;
-  animation: blink 0.5s steps(12) infinite alternate;
-}
-
-@keyframes blink {
-  to {
-    background-color: @second-background;
-    color: @text;
-  }
+#window, window#waybar.solo {
+    background-color: @surface_container_lowest;
+    color: @primary;
+    padding: 0 10 0 10;
 }

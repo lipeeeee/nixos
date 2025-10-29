@@ -1,129 +1,110 @@
-[{
-    "height": 40,
-    "spacing": 5,
+{
+  "position": "top",
+  "spacing": 4,
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "group/tray",
+    "mpris",
+    "pulseaudio",
+    "custom/exit"
+  ],
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
 
-    "modules-left": [
-        "group/workspaces",
-        "mpris"
-    ],
-    "modules-center": [
-        "group/windows"
-    ],
-    "modules-right": [
-        "group/system"
-    ],
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
 
-    "custom/openbracket": {
-        "format": "[",
-        "tooltip": false
+  "group/tray": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
     },
-    "custom/closebracket": {
-        "format": "]",
-        "tooltip": false
-    },    
-    "custom/split": {
-      "format": "|",
-      "tooltip": false
-    },
+    "modules": ["custom/trayicon", "tray", "cpu", "memory", "hyprland/language" ]
+  }, 
 
-    "group/workspaces":{
-        "orientation": "horizontal",
-        "modules":[
-            "custom/openbracket",
-            "hyprland/workspaces",
-            "custom/closebracket"
-        ]
-    },
-    "hyprland/workspaces": {
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "enable-bar-scroll": false,
-        "disable-scroll-wraparound": true,
-        "active-only": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "default": "•"
-        }
-    },
+  "custom/trayicon": {
+    "format": "󰶺",
+  },
 
-    "mpris": {
-        "format": "[   {status_icon} | {dynamic} ]",
-        "interval": 1,
-        "dynamic-len": 40,
-        "status-icons": {
-            "playing": "▶",
-            "paused": "⏸",
-            "stopped": ""
-        },
-        "dynamic-order": ["artist", "title"]
-    },
+  "clock": {
+    "format": " {:%H:%M}",
+    "format-alt": " {:%A, %B %d %H:%M}",
+    "on-click": "mode",
+    "tooltip": false
+  },
 
+  "cpu": {
+    "interval": 5,
+    "format": " {usage}%",
+    "max-length": 15
+  },
 
-    "group/windows": {
-        "orientation":"horizontal",
-        "modules":[
-            "custom/openbracket",
-            "hyprland/window",
-            "custom/closebracket"
-        ]
-    },
-    "hyprland/window": {
-        "format": "{title}", 
-        "max-length": 40,
-        "min-length": 0,
-        "all-outputs": true
-    },
+  "memory": {
+    "interval": 5,
+    "format": " {used:0.1f}G/{total:0.1f}G"
+  },
 
-    "group/system": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/openbracket",
-            "clock",
-            "custom/split",
-            "network",
-            "battery",
-            "custom/closebracket"
-        ]
-    },
-    "clock": {
-        "format": "{:%I:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "onclick" : "kalender"
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "on-click": "wlogout"
-    },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": "vol muted",
+    "on-click": "kitty -T tui_app wiremix"
+  },
 
-    "network": {
-        "interface": "wlo1",
-        "format-wifi": "{icon}  {essid}",
-        "format-ethernet": "󰈀 LAN",
-        "format-disconnected": "󰖪",
-        "tooltip-format": "{ipaddr} ({signalStrength}%)",
-        "on-click": "kitty -e nmtui",
-        "format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ]
-    },
+  "custom/exit": {
+    "format": "⏻",
+    "on-click": "~/.config/rofi/scripts/powermenu.sh",
+    "on-click-right": "hyprlock"
+  },
 
-    "tray": {
-        "icon-size": 14,
-        "spacing": 10
+  "hyprland/language": {
+    "format": " {}",
+    "format-en": "us",
+    "format-tr": "trq",
+    "on-click": "hyprctl switchxkblayout vxe-v87-vxe-v87 next"
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 30,
+    "rewrite": {
+      "kitty": "Terminal",
+      "zsh": "Terminal",
+      "~": "Terminal"
     },
-}]
+    "swap-icon-label": false,
+    "icon": false 
+  },
+
+  "mpd": {
+    "format": " {title}",
+    "format-disconnected": "",
+    "format-stopped": "",
+    "max-length": 30,
+    "interval": 10,
+    "consume-icons": {
+      "on": " " // Icon shows only when "consume" is on
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-click": "mpc toggle"
+  },
+
+  "mpris": {
+    "format": "{dynamic}",
+    "interval": 1,
+    "dynamic-len": 40,
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "dynamic-order": ["artist", "title"]
+  }
+}
