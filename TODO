@@ -1,4 +1,12 @@
 - Define colorscheme
+#050404 - almost black
+#392025 - dark brown
+#59313a - dark pinkish
+#c3af92 - light brown (deactive 1)
+#ba6e7d - pinkish (active)
+#ccc5b9 - silver
+#f2f3f4 - anti flash white (deactive 2)
+
 - waybar
 - notification daemon
 - screen locker
