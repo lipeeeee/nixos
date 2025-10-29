@@ -55,7 +55,7 @@
   "pulseaudio": {
     "format": " {volume}%",
     "format-muted": "vol muted",
-    "on-click": "kitty -T tui_app wiremix",
+    "on-click": "kitty -T wiremix wiremix",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
 
