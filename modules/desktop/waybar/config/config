@@ -1,13 +1,13 @@
 {
   "position": "top",
   "spacing": 4,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-left": ["hyprland/workspaces", "mpris"],
   "modules-center": ["clock"],
   "modules-right": [
     "group/tray",
-    "mpris",
     "pulseaudio",
     "battery",
+    "network",
     "custom/exit"
   ],
   "margin-top": 0,
@@ -93,14 +93,26 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-time": "{H}:{M}",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "interval": 5,
+  },
+
+  "network": {
+    "interface": "wl*",
+    "format": "{ifname}",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-wifi": "{icon}",
+    "format-disconnected": "󰖪",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format": "{ifname}({essid}): {ipaddr}",
+    "on-click": "kitty -T nmtui nmtui",
+    "interval": 3
   },
 
   "mpris": {
     "format": " {dynamic}",
     "interval": 1,
-    "dynamic-len": 40,
+    "dynamic-len": 100,
     "status-icons": {
       "playing": "",
       "paused": "",

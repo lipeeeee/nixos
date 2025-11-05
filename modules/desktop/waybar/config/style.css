@@ -76,6 +76,7 @@ button {
 #pulseaudio,
 #mpd,
 #mpris,
+#network,
 #battery,
 #custom-exit {
     background-color: @surface_container_lowest;
