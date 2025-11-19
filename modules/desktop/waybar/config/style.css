@@ -76,12 +76,16 @@ button {
 #pulseaudio,
 #mpd,
 #mpris,
-#network,
 #battery,
 #custom-exit {
     background-color: @surface_container_lowest;
     color: @primary;
     padding: 5 7 5 7
+}
+
+#network {
+    background-color: @surface_container_lowest;
+    color: @primary;
 }
 
 #mpd {

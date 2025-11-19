@@ -6,8 +6,8 @@
   "modules-right": [
     "group/tray",
     "pulseaudio",
-    "battery",
     "network",
+    "battery",
     "custom/exit"
   ],
   "margin-top": 0,
