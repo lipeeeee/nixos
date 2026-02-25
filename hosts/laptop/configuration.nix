@@ -27,15 +27,13 @@
     options = "--delete-older-than 7d";
   };
 
-  # Don't forget to set a password with ‘passwd’.
   users.users.lipe = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" ];
     packages = with pkgs; [];
   };
 
-  programs.firefox.enable = true;
-
+  programs.firefox.enable = true; # TODO: remove from here
   environment.systemPackages = with pkgs; [
     wget
     neovim
@@ -45,7 +43,7 @@
     git
   ];
   
-  # List services that you want to enable:
+  # Services
   services.openssh.enable = true;
   services.pipewire = {
     enable = true;

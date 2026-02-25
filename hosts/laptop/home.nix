@@ -19,11 +19,12 @@ in
     (M "system/fonts.nix")
   ];
 
-  home.packages = with pkgs;[
+  home.packages = with pkgs;[ # TODO: these packages should go to their own modules if poss
     tree
     htop
     gcc
     cmatrix
+    hyprpicker
 
     #audio
     playerctl
@@ -31,8 +32,7 @@ in
     pulseaudio
   ];
 
-  home.sessionVariables = {
-  };
+  home.sessionVariables = { };
 
   # Setup userdirs we create (prob not worth dividing this into a module)
   xdg.userDirs = {

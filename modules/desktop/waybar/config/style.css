@@ -1,9 +1,9 @@
-@define-color surface_container_lowest #050404;
-@define-color surface_container_low    #170e10;
-@define-color surface_container        #392025;
-@define-color primary                  #ba6e7d;
-@define-color on_background            #c3af92;
-@define-color error                    #59313a;
+@define-color surface_container_lowest #120e08;
+@define-color surface_container_low    #32302f; 
+@define-color surface_container        #504945; 
+@define-color primary                  #D4BE98; /* The "Brown Highlight" */
+@define-color on_background            #7B6544; /* Main Text (Beige) */
+@define-color error                    #ea6962;
 
 * {
     font-family: "JetBrainsMono NFP";
@@ -14,59 +14,63 @@
 
 window#waybar {
     background-color: @surface_container_lowest;
-    color: transparent;
+    color: @on_background; /* Default to beige for monochrome look */
     transition-property: background-color;
     transition-duration: 0.1s;
-    margin: 0;
-    border-radius: 0px
+
+    border: 2px solid @primary;
+    border-radius: 6px;
 }
 
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
-    border-radius: 0;
 }
 
 #custom-cava {
     font-family: "Tahoma";
+    color: @primary; /* Visualizer looks better in accent color */
 }
 
 #workspaces {
-    margin: 2 0 0 0;
-    border-radius: 14px;
+    /* margin: 2 0 0 0; */
+    background-color: transparent;
 }
 
 #workspaces button {
     background: @surface_container_lowest;
-    color: @primary;
+    color: @on_background; /* Inactive workspaces are beige */
     padding: 0 4px;
-    margin: 0 2px;
+    margin: 2 2px;
 }
 
 .modules-left {
-    background-color: @surface_container_lowest;
+    margin-left: 1px; 
+    background-color: transparent;
 }
 
 #workspaces button.focused {
-    color: @primary;
+    color: @primary; /* Focused workspace gets the Highlight */
 }
+
 #workspaces button.active {
     background-color: @surface_container_low;
-    color: @primary;
-    border-radius: 0;
+    color: @primary; /* Active gets Highlight */
     border-top: 2px solid @primary;
-    margin-top: -2px;
+    border-radius: 0px;
+    margin-top: 0;
 }
 
 #workspaces button.urgent {
     background-color: @error;
-    color: @surface_container;
+    color: @surface_container_lowest;
 }
 
 #clock {
-    background-color: @surface_container_lowest;
-    color: @primary;
-    padding: 0 12 0 12
+    background-color: transparent;
+    color: @primary; /* Keep clock neutral */
+    padding: 0 12 0 12;
+    border: none;
 }
 
 #clock.date {
@@ -77,16 +81,18 @@ button {
 #mpd,
 #mpris,
 #battery,
-#custom-exit {
-    background-color: @surface_container_lowest;
-    color: @primary;
-    padding: 5 7 5 7
+#custom-exit,
+#network,
+#tray,
+#language,
+#cpu,
+#memory {
+    background-color: transparent;
+    color: @primary; 
+    padding: 5 7 5 7;
 }
 
-#network {
-    background-color: @surface_container_lowest;
-    color: @primary;
-}
+/* You might want icons to be colored? If so, use specific targeting or keep all beige */
 
 #mpd {
     margin-left: 0;
@@ -97,9 +103,6 @@ button {
 #language,
 #cpu,
 #memory {
-    background-color: @surface_container_lowest;
-    color: @primary;
-    padding: 0 7 0 7;
     margin: 0 2 0 2;
 }
 
@@ -109,31 +112,16 @@ button {
 }
 
 #tray {
-    background-color: @surface_container_lowest;
-    color: @primary;
     margin: 0 7 0 7;
 }
 
 #custom-exit {
     padding: 5 10 5 4;
+    color: @error; /* Exit button usually looks good in red */
 }
-
-/* hover animations */
-
-/* #pulseaudio:hover,
-#mpd:hover,
-#memory:hover,
-#mpris:hover,
-#cpu:hover,
-#custom-exit:hover,
-#clock:hover,
-#window:hover,
-#language:hover {
-    background-color: @surface_container_low;
-} */
 
 #window, window#waybar.solo {
     background-color: @surface_container_lowest;
-    color: @primary;
+    color: @on_background;
     padding: 0 10 0 10;
 }
