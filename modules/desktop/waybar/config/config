@@ -6,12 +6,12 @@
   "modules-right": [
     "group/tray",
     "pulseaudio",
-    "network",
-    "battery"
+    "battery",
+    "network"
   ],
-  "margin-top": 3,
-  "margin-left": 3,
-  "margin-right": 3,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
   "margin-bottom": 0,
 
   "tray": {
@@ -34,25 +34,25 @@
   },
 
   "clock": {
-    "format": " {:%H:%M}",
-    "format-alt": " {:%A, %B %d %H:%M}",
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d %H:%M}",
     "on-click": "mode",
     "tooltip": false
   },
 
   "cpu": {
     "interval": 5,
-    "format": " {usage}%",
+    "format": "cpu {usage}%",
     "max-length": 15
   },
 
   "memory": {
     "interval": 5,
-    "format": " {used:0.1f}G/{total:0.1f}G"
+    "format": "mem {used:0.1f}G/{total:0.1f}G"
   },
 
   "pulseaudio": {
-    "format": " {volume}%",
+    "format": "vol {volume}%",
     "format-muted": "vol muted",
     "on-click": "kitty -T wiremix wiremix",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
@@ -62,6 +62,14 @@
     "format": "⏻",
     "on-click": "~/.config/rofi/scripts/powermenu.sh",
     "on-click-right": "hyprlock"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{id}{icon}",
+    "format-icons": {
+      "active":  "*",
+      "default": ""
+    }
   },
 
   "hyprland/language": {
@@ -88,9 +96,9 @@
         "warning": 20,
         "critical": 10
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "bat {capacity}%",
+    "format-charging": "chg {capacity}%",
+    "format-plugged": "plg {capacity}%",
     "format-time": "{H}:{M}",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "interval": 5,
@@ -109,7 +117,7 @@
   },
 
   "mpris": {
-    "format": " {dynamic}",
+    "format": "{dynamic}",
     "interval": 1,
     "dynamic-len": 100,
     "status-icons": {
