@@ -25,6 +25,7 @@ in
     gcc
     cmatrix
     hyprpicker
+    flameshot
 
     #audio
     playerctl

@@ -1,22 +1,30 @@
-@define-color surface_container_lowest #120e08;
+@define-color surface_container_lowest #101010;
 @define-color surface_container_low    #32302f; 
 @define-color surface_container        #504945; 
-@define-color primary                  #D4BE98; /* The "Brown Highlight" */
-@define-color on_background            #7B6544; /* Main Text (Beige) */
+@define-color primary                  #FFFFFF;
+@define-color on_background            #7B6544;
 @define-color error                    #ea6962;
 
+@define-color surface_container_lowest #101010;
+@define-color surface_container_low    #252525; 
+@define-color surface_container        #9e8e72; 
+@define-color primary                  #d4d4d4;
+@define-color on_background            #555555;
+@define-color error                    #ea6962;
+
+/*
+   ========== GLOBAL ==========
+*/
 * {
     font-family: "JetBrainsMono NFP";
     font-size: 16px;
     min-height: 0;
     font-weight: bold;
 }
-
 .modules-left {
     margin-left: 1px; 
     background-color: transparent;
 }
-
 window#waybar {
     background-color: @surface_container_lowest;
     color: @on_background; /* Default to beige for monochrome look */
@@ -27,31 +35,25 @@ window#waybar {
     border-radius: 6px;*/
 }
 
+
+/*
+   ========== WORKSPACES ==========
+*/
+#workspaces {
+    background-color: transparent;
+}
 button {
     box-shadow: inset 0 -3px transparent;
     border: none;
 }
-
-#custom-cava {
-    font-family: "Tahoma";
-    color: @primary; /* Visualizer looks better in accent color */
-}
-
-#workspaces {
-    background-color: transparent;
-}
 #workspaces button {
     background: @surface_container_lowest;
     color: @on_background; /* Inactive workspaces are beige */
-    padding: 0 4px;
-    margin: 2 2px;
+    padding: 0px 4px;
+    margin: 2px 2px;
 }
+#workspaces button.active,
 #workspaces button.focused {
-    color: @primary; /* Focused workspace gets the Highlight */
-}
-#workspaces button.active {
-    /*background-color: @surface_container_low;*/ 
-    /*border-top: 2px solid @primary;*/
     color: @primary;
 }
 #workspaces button.urgent {
@@ -59,10 +61,14 @@ button {
     color: @surface_container_lowest;
 }
 
+/*
+   ========== CLOCK ==========
+*/
 #clock {
     background-color: transparent;
+    font-weight: normal;
     color: @primary;
-    padding: 0 12 0 12;
+    padding: 0px 12px 0px 12px;
     border: none;
 }
 #clock.date {
@@ -80,38 +86,39 @@ button {
 #cpu,
 #memory {
     background-color: transparent;
+    font-weight: normal;
     color: @primary; 
-    padding: 5 7 5 7;
-}
-
-#mpd {
-    margin-left: 0;
-    padding-left: 1;
+    padding: 5px 7px 5px 7px;
 }
 
 #tray,
 #language,
 #cpu,
 #memory {
-    margin: 0 2 0 2;
+    margin: 0px 2px 0px 2px;
 }
 
 #custom-trayicon {
     font-size: 20px;
-    margin: 0 0 0 4;
+    margin: 0px 0px 0px 4px;
 }
 
 #tray {
-    margin: 0 7 0 7;
-}
-
-#custom-exit {
-    padding: 5 10 5 4;
-    color: @error; /* Exit button usually looks good in red */
+    margin: 0px 7px 0px 7px;
 }
 
 #window, window#waybar.solo {
     background-color: @surface_container_lowest;
     color: @on_background;
-    padding: 0 10 0 10;
+    padding: 0px 10px 0px 10px;
+}
+
+/*
+   ========== SEPERATORS ==========
+*/
+#custom-left, 
+#custom-right, 
+#custom-sep {
+    color: @surface_container_low;
+    font-weight: normal;
 }
