@@ -1,79 +1,53 @@
 @define-color surface_container_lowest #101010;
-@define-color surface_container_low    #32302f; 
-@define-color surface_container        #504945; 
-@define-color primary                  #FFFFFF;
-@define-color on_background            #7B6544;
-@define-color error                    #ea6962;
-
-@define-color surface_container_lowest #101010;
 @define-color surface_container_low    #252525; 
 @define-color surface_container        #9e8e72; 
 @define-color primary                  #d4d4d4;
 @define-color on_background            #555555;
 @define-color error                    #ea6962;
 
-/*
-   ========== GLOBAL ==========
-*/
+/* ========== GLOBAL ========== */
 * {
-    font-family: "JetBrainsMono NFP";
+    font-family: "JetBrainsMono NFP", monospace;
     font-size: 16px;
-    font-weight: bold;
 
     min-height: 0;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
-.modules-left {
-    margin-left: 1px; 
-    background-color: transparent;
-}
+
 window#waybar {
     background-color: @surface_container_lowest;
-    color: @on_background; /* Default to beige for monochrome look */
-    transition-property: background-color;
-    transition-duration: 0.1s;
+    color: @on_background;
+    transition: background-color 0.1s;
 }
 
+.modules-left {
+    margin-left: 1px; 
+}
 
-/*
-   ========== WORKSPACES ==========
-*/
-#workspaces {
-    background-color: transparent;
-}
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-}
+/* ========== WORKSPACES ========== */
 #workspaces button {
-    background: @surface_container_lowest;
-    color: @on_background; /* Inactive workspaces are beige */
+    color: @on_background;
+    padding: 0px 4px;
+    margin: 0px;
 }
+
 #workspaces button.active,
 #workspaces button.focused {
     color: @primary;
+    font-weight: bold;
 }
+
 #workspaces button.urgent {
     background-color: @error;
     color: @surface_container_lowest;
 }
 
-/*
-   ========== CLOCK ==========
-*/
-#clock {
-    background-color: transparent;
-    font-weight: normal;
-    color: @primary;
-    border: none;
-}
-#clock.date {
-    color: @on_background;
-}
-
+/* ========== MODULES ========== */
+#clock,
 #pulseaudio,
 #mpd,
 #mpris,
@@ -84,40 +58,40 @@ button {
 #language,
 #cpu,
 #memory {
-    background-color: transparent;
-    font-weight: normal;
     color: @primary; 
-    padding: 4px 7px 4px 7px;
+    padding: 4px 7px; /*4px makes the bar larger*/
 }
 
-#tray,
+/* Module-Specific Overrides */
+#clock.date {
+    color: @on_background;
+}
+
 #language,
 #cpu,
 #memory {
-    margin: 0px 2px 0px 2px;
+    margin: 0 2px;
+}
+
+#tray {
+    margin: 0 7px;
 }
 
 #custom-trayicon {
     font-size: 20px;
-    margin: 0px 0px 0px 4px;
+    margin-left: 4px;
 }
 
-#tray {
-    margin: 0px 7px 0px 7px;
-}
-
-#window, window#waybar.solo {
+#window, 
+window#waybar.solo {
     background-color: @surface_container_lowest;
     color: @on_background;
-    padding: 0px 10px 0px 10px;
+    padding: 0 10px;
 }
 
-/*
-   ========== SEPERATORS ==========
-*/
+/* ========== SEPARATORS ========== */
 #custom-left, 
 #custom-right, 
 #custom-sep {
     color: @surface_container_low;
-    font-weight: normal;
 }

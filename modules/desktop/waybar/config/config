@@ -1,6 +1,7 @@
 {
   "position": "top",
   "spacing": 4,
+
   "modules-left": [
     "hyprland/workspaces", 
     "mpris"
@@ -18,10 +19,7 @@
     "network",
     "custom/right"
   ],
-  "margin-top": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  "margin-bottom": 0,
+
   "group/tray": {
     "orientation": "horizontal",
     "drawer": {
@@ -29,8 +27,22 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": ["custom/trayicon", "tray", "cpu", "memory" ]
+    "modules": ["custom/trayicon", "tray", "cpu", "memory"]
   }, 
+
+  "hyprland/workspaces": {
+    "format": "{id}{icon}",
+    "format-icons": {
+      "active": "*",
+      "default": ""
+    }
+  },
+  "mpris": {
+    "format": "{dynamic}",
+    "interval": 1,
+    "dynamic-len": 100,
+    "dynamic-order": ["artist", "title"]
+  },
 
   "clock": {
     "format": "{:%H:%M}",
@@ -39,57 +51,22 @@
     "tooltip": false
   },
 
-  "custom/left": {
-      "format": "[",
-      "tooltip": false
-  },
-  "custom/right": {
-      "format": "]",
-      "tooltip": false
-  },
-
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10
-  },
-  "custom/trayicon": {
-    "format": "󰶺",
-  },
-  "cpu": {
-    "interval": 5,
-    "format": "<span color='#a89984'>cpu</span> {usage}%",
-    "max-length": 15
-  },
-  "memory": {
-    "interval": 5,
-    "format": "<span color='#a89984'>mem</span> {used:0.1f}G/{total:0.1f}G"
-  },
-
-  "hyprland/workspaces": {
-    "format": "{id}{icon}",
-    "format-icons": {
-      "active":  "*",
-      "default": ""
-    }
-  },
-
-  "battery": {
-    "states": {
-        "warning": 20,
-        "critical": 10
-    },
-    "format": "<span color='#a89984'>bat</span> {capacity}%",
-    "format-charging": "<span color='#a89984'>chg</span> {capacity}%",
-    "format-plugged": "<span color='#a89984'>plg</span> {capacity}%",
-    "format-time": "{H}:{M}",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "interval": 5,
-  },
   "pulseaudio": {
     "format": "<span color='#a89984'>vol</span> {volume}%",
     "format-muted": "<span color='#a89984'>vol</span> muted",
     "on-click": "kitty -T wiremix wiremix",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "<span color='#a89984'>bat</span> {capacity}%",
+    "format-charging": "<span color='#a89984'>chg</span> {capacity}%",
+    "format-plugged": "<span color='#a89984'>plg</span> {capacity}%",
+    "format-time": "{H}:{M}",
+    "interval": 5
   },
   "network": {
     "interface": "wl*",
@@ -103,15 +80,29 @@
     "interval": 3
   },
 
-  "mpris": {
-    "format": "{dynamic}",
-    "interval": 1,
-    "dynamic-len": 100,
-    "status-icons": {
-      "playing": "",
-      "paused": "",
-      "stopped": ""
-    },
-    "dynamic-order": ["artist", "title"]
+  "custom/trayicon": {
+    "format": "󰶺"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "<span color='#a89984'>cpu</span> {usage}%",
+    "max-length": 15
+  },
+  "memory": {
+    "interval": 5,
+    "format": "<span color='#a89984'>mem</span> {used:0.1f}G/{total:0.1f}G"
+  },
+
+  "custom/left": {
+    "format": "[",
+    "tooltip": false
+  },
+  "custom/right": {
+    "format": "]",
+    "tooltip": false
   }
 }
