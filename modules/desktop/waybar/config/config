@@ -78,16 +78,16 @@
         "warning": 20,
         "critical": 10
     },
-    "format": "bat {capacity}%",
-    "format-charging": "chg {capacity}%",
-    "format-plugged": "plg {capacity}%",
+    "format": "<span color='#a89984'>bat</span> {capacity}%",
+    "format-charging": "<span color='#a89984'>chg</span> {capacity}%",
+    "format-plugged": "<span color='#a89984'>plg</span> {capacity}%",
     "format-time": "{H}:{M}",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "interval": 5,
   },
   "pulseaudio": {
-    "format": "vol {volume}%",
-    "format-muted": "vol muted",
+    "format": "<span color='#a89984'>vol</span> {volume}%",
+    "format-muted": "<span color='#a89984'>vol</span> muted",
     "on-click": "kitty -T wiremix wiremix",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
