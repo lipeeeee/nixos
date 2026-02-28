@@ -14,6 +14,7 @@ in
 
     (M "desktop/hyprland/hyprland.nix")
     (M "desktop/waybar/waybar.nix")
+    (M "desktop/tofi/tofi.nix")
     (M "desktop/swww/swww.nix")
 
     (M "system/fonts.nix")
