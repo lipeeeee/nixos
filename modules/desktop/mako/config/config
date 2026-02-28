@@ -1,0 +1,19 @@
+font=JetBrainsMono NFP 12
+width=350
+height=100
+margin=10
+padding=10
+border-size=2
+border-radius=0
+icons=0
+markup=1
+format=<b>%s</b>\n%b
+ignore-timeout=0
+default-timeout=5000
+
+background-color=#101010
+text-color=#d4d4d4
+border-color=#252525
+
+[urgency=high]
+border-color=#ea6962
