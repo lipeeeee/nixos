@@ -28,6 +28,7 @@ in
     cmatrix
     hyprpicker
     flameshot
+    cliphist
 
     #audio
     playerctl
