@@ -1,0 +1,61 @@
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+[mgr]
+cwd = { fg = "#a89984" }
+
+# Find
+find_keyword  = { fg = "#a89984", bold = true, italic = true, underline = true }
+find_position = { fg = "#252525", bg = "#a89984", bold = true, italic = true }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#252525" }
+
+[tabs]
+active   = { fg = "#d4d4d4", bg = "#252525", bold = true }
+inactive = { fg = "#555555", bg = "#101010" }
+
+# Remove rounded powerline symbols
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "#101010", bg = "#a89984", bold = true }
+normal_alt  = { fg = "#d4d4d4", bg = "#252525" }
+select_main = { fg = "#101010", bg = "#ea6962", bold = true }
+select_alt  = { fg = "#d4d4d4", bg = "#252525" }
+unset_main  = { fg = "#101010", bg = "#555555", bold = true }
+unset_alt   = { fg = "#d4d4d4", bg = "#252525" }
+
+[status]
+# Remove rounded powerline symbols
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Permissions
+perm_sep  = { fg = "#252525" }
+perm_type = { fg = "#a89984" }
+perm_read = { fg = "#d4d4d4" }
+perm_write= { fg = "#ea6962" }
+perm_exec = { fg = "#555555" }
+
+[input]
+border   = { fg = "#252525" }
+selected = { reversed = true }
+
+[pick]
+border   = { fg = "#252525" }
+active   = { fg = "#a89984", bold = true }
+
+[confirm]
+border   = { fg = "#252525" }
+title    = { fg = "#a89984" }
+
+# Force all file types to a single text color to prevent random bright highlights
+[filetype]
+rules = [
+    { url = "*", fg = "#d4d4d4" }
+]
+
+[indicator]
+padding = { open = " ", close = " " }

@@ -15,10 +15,14 @@ in
     (M "desktop/hyprland/hyprland.nix")
     (M "desktop/waybar/waybar.nix")
     (M "desktop/tofi/tofi.nix")
+    # (M "desktop/fuzzel/fuzzel.nix")
     (M "desktop/mako/mako.nix")
     (M "desktop/swww/swww.nix")
 
+    (M "tui/yazi/yazi.nix")
+
     (M "system/fonts.nix")
+    (M "system/bash.nix")
   ];
 
   home.packages = with pkgs;[ # TODO: these packages should go to their own modules if poss
@@ -35,8 +39,6 @@ in
     wiremix
     pulseaudio
   ];
-
-  home.sessionVariables = { };
 
   # Setup userdirs we create (prob not worth dividing this into a module)
   xdg.userDirs = {

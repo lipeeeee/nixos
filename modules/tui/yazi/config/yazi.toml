@@ -1,0 +1,15 @@
+[mgr]
+# Set the width ratio of the parent, current, and preview columns
+ratio          = [ 1, 4, 3 ]
+sort_by        = "alphabetical"
+sort_dir_first = true
+# Removes extra file info (permissions, size) next to file names
+#linemode       = "none" 
+show_hidden    = true 
+
+[preview]
+# Disables image previews if you want a strictly text-only terminal
+image_filter   = "nearest"
+image_quality  = 50
+max_width      = 600
+max_height     = 600
