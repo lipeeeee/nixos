@@ -13,6 +13,7 @@ in
     (M "editors/vim/vim.nix")
 
     (M "desktop/hyprland/hyprland.nix")
+    (M "desktop/hyprlock/hyprlock.nix")
     (M "desktop/waybar/waybar.nix")
     (M "desktop/tofi/tofi.nix")
     # (M "desktop/fuzzel/fuzzel.nix")
