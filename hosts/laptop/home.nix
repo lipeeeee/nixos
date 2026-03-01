@@ -24,6 +24,7 @@ in
 
     (M "system/fonts.nix")
     (M "system/bash.nix")
+    (M "system/hypridle.nix")
   ];
 
   home.packages = with pkgs;[ # TODO: these packages should go to their own modules if poss
