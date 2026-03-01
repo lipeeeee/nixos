@@ -33,7 +33,8 @@ in
     gcc
     cmatrix
     hyprpicker
-    flameshot
+    grim
+    slurp
     cliphist
 
     #audio
