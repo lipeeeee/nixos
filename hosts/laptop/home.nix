@@ -21,6 +21,7 @@ in
     (M "desktop/swww/swww.nix")
 
     (M "tui/yazi/yazi.nix")
+    (M "tui/btop/btop.nix")
 
     (M "system/fonts.nix")
     (M "system/bash.nix")
@@ -29,7 +30,6 @@ in
 
   home.packages = with pkgs;[ # TODO: these packages should go to their own modules if poss
     tree
-    btop
     gcc
     cmatrix
     hyprpicker
