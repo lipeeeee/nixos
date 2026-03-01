@@ -29,7 +29,7 @@ in
 
   home.packages = with pkgs;[ # TODO: these packages should go to their own modules if poss
     tree
-    htop
+    btop
     gcc
     cmatrix
     hyprpicker
