@@ -40,6 +40,11 @@ in
     pulseaudio
   ];
 
+  home.sessionVariables = {
+    EDITOR = "vim";
+    VISUAL = "vim";
+  };
+
   # Setup userdirs we create (prob not worth dividing this into a module)
   xdg.userDirs = {
     enable = true;

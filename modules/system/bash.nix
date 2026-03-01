@@ -2,10 +2,6 @@
 
 {
   # 1. env variables
-  home.sessionVariables = {
-    EDITOR = "vim";
-    VISUAL = "vim";
-  };
 
   programs.bash = {
     enable = true;
@@ -30,6 +26,7 @@
       }
 
       # --- General .bashrc Setup ---
+      export PS1='\[\033[38;2;168;153;132m\]\u@\h \[\033[37m\]\w\[\033[0m\]$ '
 
 
       # --- Machine-Specific Complement ---
