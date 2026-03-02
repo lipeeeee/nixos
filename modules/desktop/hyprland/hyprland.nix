@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     wl-clipboard
+    hyprpicker
     kitty
   ];
 

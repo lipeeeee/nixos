@@ -3,9 +3,6 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # shitty hack::: enable stuff here that is not available on home-manager 
-  programs.hyprland.enable = true;
-
   imports = [
       /etc/nixos/hardware-configuration.nix
   ];
@@ -36,7 +33,6 @@
   programs.firefox.enable = true; # TODO: remove from here
   environment.systemPackages = with pkgs; [
     wget
-    neovim
     alacritty
     playerctl
     brightnessctl

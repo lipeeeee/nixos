@@ -1,3 +1,3 @@
 - discord spotify brave
 - neovim install script??????
-- tmux
+- organize & remove pkgs from hosts/configuration.nix

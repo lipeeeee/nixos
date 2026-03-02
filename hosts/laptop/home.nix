@@ -11,6 +11,7 @@ in
 
   imports = [
     (M "editors/vim/vim.nix")
+    (M "editors/neovim.nix")
 
     (M "desktop/hyprland/hyprland.nix")
     (M "desktop/hyprlock/hyprlock.nix")
@@ -34,7 +35,6 @@ in
     tree
     gcc
     cmatrix
-    hyprpicker
     grim
     slurp
     cliphist
