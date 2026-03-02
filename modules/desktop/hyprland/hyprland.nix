@@ -1,12 +1,16 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  # programs.hyprland.enable = true; # this should be here but homemanager doesnt support it
-
   home.packages = with pkgs; [
     wl-clipboard
     hyprpicker
-    kitty
+    cliphist
+    brightnessctl
+    kitty # default terminal for hypr
+    
+    # screenshotting
+    grim
+    slurp
   ];
 
   home.file.".config/hypr" = {

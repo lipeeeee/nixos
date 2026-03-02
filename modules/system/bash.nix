@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # 1. env variables
-
   programs.bash = {
     enable = true;
 
@@ -10,7 +8,6 @@
     shellAliases = {
       ll = "ls -la";
       update = "home-manager switch";
-      # Add your other aliases here
     };
 
     # 3. general bashrc(functions & preferences & other logic)
@@ -27,7 +24,6 @@
 
       # --- General .bashrc Setup ---
       export PS1='\[\033[38;2;168;153;132m\]\u@\h \[\033[37m\]\w\[\033[0m\]$ '
-
 
       # --- Machine-Specific Complement ---
       if [ -f ~/.complement_bashrc ]; then

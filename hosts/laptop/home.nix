@@ -26,29 +26,20 @@ in
 
     (M "system/fonts.nix")
     (M "system/bash.nix")
+    (M "system/audio.nix")
     (M "system/hypridle.nix")
 
     (M "terminals/tmux.nix")
+
+    (M "cli/default.nix")
+    (M "dev/default.nix")
   ];
 
-  home.packages = with pkgs;[ # TODO: these packages should go to their own modules if poss
-    tree
-    gcc
+  home.packages = with pkgs;[
+    # JUNK ::
     cmatrix
-    grim
-    slurp
-    cliphist
-
-    #audio
-    playerctl
-    wiremix
-    pulseaudio
   ];
 
-  home.sessionVariables = {
-    EDITOR = "vim";
-    VISUAL = "vim";
-  };
 
   # Setup userdirs we create (prob not worth dividing this into a module)
   xdg.userDirs = {

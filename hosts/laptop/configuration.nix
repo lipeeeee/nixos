@@ -5,6 +5,7 @@
 
   # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
   programs.hyprland.enable = true;
+  programs.firefox.enable = true;
 
   imports = [
       /etc/nixos/hardware-configuration.nix
@@ -33,13 +34,7 @@
     packages = with pkgs; [];
   };
 
-  programs.firefox.enable = true; # TODO: remove from here
   environment.systemPackages = with pkgs; [
-    wget
-    alacritty
-    playerctl
-    brightnessctl
-    git
   ];
   
   # Services
