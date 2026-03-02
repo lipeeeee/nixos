@@ -33,7 +33,8 @@ in
 
     (M "cli/default.nix")
     (M "dev/default.nix")
-    (M "dev/python.nix")
+    # (M "dev/python-cuda.nix")
+    (M "dev/python-standard.nix")
   ];
 
   home.packages = with pkgs;[
