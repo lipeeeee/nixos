@@ -1,4 +1,4 @@
 - discord spotify brave
 - neovim install script??????
-- organize & remove pkgs from hosts/configuration.nix
 - polkit
+- direnv is cool (for nix-shell stuff)

@@ -33,6 +33,7 @@ in
 
     (M "cli/default.nix")
     (M "dev/default.nix")
+    (M "dev/python.nix")
   ];
 
   home.packages = with pkgs;[

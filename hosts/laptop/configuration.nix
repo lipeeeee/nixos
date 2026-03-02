@@ -7,6 +7,9 @@
   programs.hyprland.enable = true;
   programs.firefox.enable = true;
 
+  # for proprietary stuff like nvidia drivers & spotify
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
       /etc/nixos/hardware-configuration.nix
   ];
@@ -46,6 +49,14 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  # we love nvidia
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+  };
 
   system.stateVersion = "25.05"; # DO NOT change
 }
