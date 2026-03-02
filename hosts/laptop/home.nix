@@ -42,6 +42,9 @@ in
     cmatrix
   ];
 
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Forces Chromium and Electron apps to use native Wayland
+  };
 
   # Setup userdirs we create (prob not worth dividing this into a module)
   xdg.userDirs = {

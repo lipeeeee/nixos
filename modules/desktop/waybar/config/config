@@ -54,8 +54,8 @@
   "pulseaudio": {
     "format": "<span color='#a89984'>vol</span> {volume}%",
     "format-muted": "<span color='#a89984'>vol</span> muted",
-    "on-click": "kitty -T wiremix wiremix",
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "kitty -T wiremix wiremix"
   },
   "battery": {
     "states": {
