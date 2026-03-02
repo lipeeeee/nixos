@@ -3,6 +3,9 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
+  programs.hyprland.enable = true;
+
   imports = [
       /etc/nixos/hardware-configuration.nix
   ];
