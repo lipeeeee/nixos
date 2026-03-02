@@ -21,6 +21,10 @@ in
     (M "desktop/mako/mako.nix")
     (M "desktop/swww/swww.nix")
 
+    (M "apps/spotify.nix")
+    (M "apps/brave.nix")
+    (M "apps/discord.nix")
+
     (M "tui/yazi/yazi.nix")
     (M "tui/btop/btop.nix")
 
@@ -32,6 +36,7 @@ in
     (M "terminals/tmux.nix")
 
     (M "cli/default.nix")
+
     (M "dev/default.nix")
     # (M "dev/python-cuda.nix")
     (M "dev/python-standard.nix")
@@ -43,7 +48,7 @@ in
   ];
 
   home.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # Forces Chromium and Electron apps to use native Wayland
+    NIXOS_OZONE_WL = "1"; # Forces Chromium and Electron apps to use native Wayland, should this be here?
   };
 
   # Setup userdirs we create (prob not worth dividing this into a module)

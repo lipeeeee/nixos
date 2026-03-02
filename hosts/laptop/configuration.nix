@@ -5,7 +5,6 @@
 
   # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
   programs.hyprland.enable = true;
-  programs.firefox.enable = true;
 
   # for proprietary stuff like nvidia drivers & spotify
   nixpkgs.config.allowUnfree = true;
