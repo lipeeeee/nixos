@@ -26,6 +26,8 @@ in
     (M "system/fonts.nix")
     (M "system/bash.nix")
     (M "system/hypridle.nix")
+
+    (M "terminals/tmux.nix")
   ];
 
   home.packages = with pkgs;[ # TODO: these packages should go to their own modules if poss

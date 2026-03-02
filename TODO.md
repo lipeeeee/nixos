@@ -1,0 +1,3 @@
+- discord spotify brave
+- neovim install script??????
+- tmux
