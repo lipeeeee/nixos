@@ -12,6 +12,7 @@ in
   imports = [
     (M "editors/vim/vim.nix")
     (M "editors/neovim.nix")
+    (M "editors/vscode.nix")
 
     (M "desktop/hyprland/hyprland.nix")
     (M "desktop/hyprlock/hyprlock.nix")

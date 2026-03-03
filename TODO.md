@@ -1,4 +1,2 @@
-- discord spotify brave
-- neovim install script??????
 - polkit
 - direnv is cool (for nix-shell stuff)

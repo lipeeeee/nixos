@@ -15,6 +15,7 @@ in
     (cudaPkgs.python3.withPackages (ps: with ps; [
       requests
       numpy
+      pyopencl
       torch
       torchvision
       torchaudio

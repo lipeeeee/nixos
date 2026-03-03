@@ -5,5 +5,5 @@
 
 ## Nvim
 ```bash
-git clone ssh@nvim
+git clone git@github.com:lipeeeee/.nvim.git ~/.config/nvim 
 ```
