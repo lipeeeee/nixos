@@ -1,2 +1,4 @@
+- 't' alias
+- python3 shell on demand (super + P)
 - polkit
 - direnv is cool (for nix-shell stuff)

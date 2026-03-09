@@ -7,7 +7,7 @@
     # 2. aliases
     shellAliases = {
       ll = "ls -la";
-      update = "home-manager switch";
+      t = "tmux";
     };
 
     # 3. general bashrc(functions & preferences & other logic)
