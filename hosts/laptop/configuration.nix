@@ -17,6 +17,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  zramSwap.enable = true;
+  zramSwap.algorithm = "zstd";
+
   networking.hostName = "nixos";
   time.timeZone = "Europe/London";
 
