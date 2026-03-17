@@ -11,11 +11,18 @@ let
   };
 in
 {
+  # disable __pycache__
+  home.sessionVariables = {
+    PYTHONDONTWRITEBYTECODE = "1";
+  };
+
   home.packages = [
     (cudaPkgs.python3.withPackages (ps: with ps; [
       requests
       numpy
       pyopencl
+      pytest
+
       torch
       torchvision
       torchaudio
