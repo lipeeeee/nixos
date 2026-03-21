@@ -23,6 +23,7 @@ in
     (M "desktop/swww/swww.nix")
 
     (M "apps/spotify.nix")
+    # (M "apps/stremio.nix") # NOTE: for now it is not being installed automatically. install it via flatpak
     (M "apps/brave.nix")
     (M "apps/discord.nix")
 
