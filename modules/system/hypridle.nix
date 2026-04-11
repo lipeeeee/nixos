@@ -14,18 +14,18 @@
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
   
-      listener = [
+      listener = [ # timeout supposedly uses *seconds* but its BS
         {
-          timeout = 1800; # 30 minutes
+          timeout = 3000;
           on-timeout = "loginctl lock-session";
         }
         {
-          timeout = 3000; # 50 minutes
+          timeout = 4000; # 50 minutes
           on-timeout = "hyprctl dispatch dpms off"; # Turn off screen
           on-resume = "hyprctl dispatch dpms on";   # Turn on screen
         }
         {
-          timeout = 3600; # 60 minutes
+          timeout = 4000;
           on-timeout = "systemctl suspend"; # Suspend PC
         }
       ];
