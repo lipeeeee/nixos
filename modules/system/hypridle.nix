@@ -20,12 +20,12 @@
           on-timeout = "loginctl lock-session";
         }
         {
-          timeout = 4000; # 50 minutes
+          timeout = 3300;
           on-timeout = "hyprctl dispatch dpms off"; # Turn off screen
           on-resume = "hyprctl dispatch dpms on";   # Turn on screen
         }
         {
-          timeout = 4000;
+          timeout = 3600;
           on-timeout = "systemctl suspend"; # Suspend PC
         }
       ];
