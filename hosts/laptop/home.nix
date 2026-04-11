@@ -46,7 +46,9 @@ in
 
   home.packages = with pkgs;[
     # JUNK ::
+    R
     cmatrix
+    cloc
   ];
 
   home.sessionVariables = {
