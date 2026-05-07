@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     tree
+    zip
     git
     wget
     curl
