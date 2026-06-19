@@ -29,6 +29,7 @@ in
 
     (M "tui/yazi/yazi.nix")
     (M "tui/btop/btop.nix")
+    (M "tui/opencode.nix")
 
     (M "system/fonts.nix")
     (M "system/bash.nix")
@@ -38,7 +39,6 @@ in
     (M "terminals/tmux.nix")
 
     (M "cli/default.nix")
-    (M "cli/opencode.nix")
 
     (M "dev/default.nix")
     # (M "dev/python-cuda.nix")
