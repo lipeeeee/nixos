@@ -1,6 +1,5 @@
-{ config, lib, inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  # we just enable neovim here, config is cloned from repo
-  programs.neovim.enable = true;
+  home.packages = [ pkgs.neovim ];
 }
