@@ -3,7 +3,7 @@ local mainMod = "SUPER"
 local terminal    = "kitty"
 local fileManager = "kitty -T yazi-float bash -ic \"y; exec bash\""
 local pythonFloat = "kitty -T python-float python3"
-local menu        = "tofi-drun --drun-launch=false | xargs hyprctl dispatch exec --"
+local menu        = "tofi-drun --drun-launch=true"
 local colorPicker = "hyprpicker -a"
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
