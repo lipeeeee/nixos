@@ -38,6 +38,7 @@ in
     (M "terminals/tmux.nix")
 
     (M "cli/default.nix")
+    (M "cli/opencode.nix")
 
     (M "dev/default.nix")
     # (M "dev/python-cuda.nix")
