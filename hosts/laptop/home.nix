@@ -41,6 +41,7 @@ in
     (M "cli/default.nix")
 
     (M "dev/default.nix")
+    (M "dev/lsps.nix")
     # (M "dev/python-cuda.nix")
     (M "dev/python-standard.nix")
   ];
