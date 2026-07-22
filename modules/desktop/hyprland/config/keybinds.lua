@@ -25,10 +25,10 @@ hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mainMod .. " + right", hl.dsp.window.resize({ x = 30, y = 0 }),  { repeating = true })
-hl.bind(mainMod .. " + left",  hl.dsp.window.resize({ x = -30, y = 0 }), { repeating = true })
-hl.bind(mainMod .. " + up",    hl.dsp.window.resize({ x = 0, y = -30 }), { repeating = true })
-hl.bind(mainMod .. " + down",  hl.dsp.window.resize({ x = 0, y = 30 }),  { repeating = true })
+hl.bind(mainMod .. " + right", hl.dsp.window.resize({ x = 30,  y = 0,   relative = true }), { repeating = true })
+hl.bind(mainMod .. " + left",  hl.dsp.window.resize({ x = -30, y = 0,   relative = true }), { repeating = true })
+hl.bind(mainMod .. " + up",    hl.dsp.window.resize({ x = 0,   y = -30, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + down",  hl.dsp.window.resize({ x = 0,   y = 30,  relative = true }), { repeating = true })
 
 for i = 1, 10 do
   local key = i % 10
