@@ -44,6 +44,8 @@ in
     (M "dev/lsps.nix")
     # (M "dev/python-cuda.nix")
     (M "dev/python-standard.nix")
+
+    (M "projects/tribble.nix")
   ];
 
   home.packages = with pkgs;[
