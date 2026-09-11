@@ -38,6 +38,7 @@
     }
   },
   "mpris": {
+    "player": "playerctld",
     "format": "{dynamic}",
     "interval": 1,
     "dynamic-len": 100,
