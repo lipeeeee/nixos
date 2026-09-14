@@ -1,8 +1,13 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, nixpkgs-opencode, lib, ... }:
 
+let # WARNING: opencode 1.18.29 hack
+  pinnedPkgs = import nixpkgs-opencode {
+    system = pkgs.system;
+  };
+in
 {
   home.packages = [
-    pkgs.opencode
+    pinnedPkgs.opencode
   ];
 
   home.activation.setupOpenCodeConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''

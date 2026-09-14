@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:Nixos/nixpkgs/nixos-unstable";
+    nixpkgs-opencode.url = "github:NixOS/nixpkgs/dc5d91f840324650bac8c379428c7037a416959a"; # WARNING: opencode pin v.18.29
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,7 +19,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-opencode, home-manager, ... }@inputs: # WARNING: opencode 1.18.29 hack
   let
     # Reusable function to configure a single NixOS system
     mkNixosSystem = { system, hostname, username, extraModules ? [] }:
@@ -36,10 +37,11 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-	      extraSpecialArgs = {
-	        inherit inputs;
-	        hostName = hostname;
-	      };
+              extraSpecialArgs = {
+                inherit inputs;
+                inherit nixpkgs-opencode; # WARNING: opencode 1.18.29 hack
+                hostName = hostname;
+              };
               
               # Specify which user's config to apply on this host
               users.${username} = import ./hosts/${hostname}/home.nix;
