@@ -11,5 +11,6 @@
     fd
     fzf
     unzip
+    cloc
   ];
 }
