@@ -40,6 +40,7 @@ in
     (M "terminals/tmux.nix")
 
     (M "cli/default.nix")
+    (M "cli/latex.nix")
 
     (M "dev/default.nix")
     (M "dev/lsps.nix")

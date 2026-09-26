@@ -2,7 +2,7 @@
 
 let # WARNING: opencode 1.18.31 hack
   pinnedPkgs = import nixpkgs-opencode {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
   };
 in
 {
