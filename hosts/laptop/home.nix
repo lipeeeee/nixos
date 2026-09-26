@@ -31,6 +31,7 @@ in
     (M "tui/yazi/yazi.nix")
     (M "tui/btop/btop.nix")
     (M "tui/opencode.nix")
+    (M "tui/codex.nix")
 
     (M "system/fonts.nix")
     (M "system/bash.nix")
