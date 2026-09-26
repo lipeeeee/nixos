@@ -42,7 +42,9 @@
     "format": "{dynamic}",
     "interval": 1,
     "dynamic-len": 100,
-    "dynamic-order": ["artist", "title"]
+    "dynamic-order": ["artist", "title"],
+    "on-scroll-up": "playerctl --player=playerctld volume 0.05+",
+    "on-scroll-down": "playerctl --player=playerctld volume 0.05-"
   },
 
   "clock": {
