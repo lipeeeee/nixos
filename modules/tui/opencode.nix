@@ -1,6 +1,6 @@
 { config, pkgs, nixpkgs-opencode, lib, ... }:
 
-let # WARNING: opencode 1.18.29 hack
+let # WARNING: opencode 1.18.31 hack
   pinnedPkgs = import nixpkgs-opencode {
     system = pkgs.system;
   };
