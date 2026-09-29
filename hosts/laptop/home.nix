@@ -45,7 +45,7 @@ in
 
     (M "dev/default.nix")
     (M "dev/lsps.nix")
-    (M "dev/ui_py.nix")
+    (M "dev/uv_py.nix")
     # (M "dev/python-cuda.nix")
     (M "dev/python-standard.nix")
 

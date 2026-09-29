@@ -1,9 +1,7 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    uv
+  home.packages = [
+    pkgs.uv
   ];
-
-  programs.nix-ld.enable = true;
 }
