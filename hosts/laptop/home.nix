@@ -26,7 +26,7 @@ in
     # (M "apps/stremio.nix") # NOTE: for now it is not being installed automatically. install it via flatpak
     (M "apps/brave.nix")
     (M "apps/discord.nix")
-    (M "apps/zotero.nix")
+    # (M "apps/zotero.nix")
 
     (M "tui/yazi/yazi.nix")
     (M "tui/btop/btop.nix")
