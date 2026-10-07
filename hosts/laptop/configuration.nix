@@ -6,6 +6,7 @@
   # NOTE: Shitty hack -> things home manager doesnt allow setting up we do here in a general way
   programs.hyprland.enable = true;
   programs.nix-ld.enable = true;
+  programs.virt-manager.enable = true;
 
   # for proprietary stuff like nvidia drivers & apps such as spotify, etc..
   nixpkgs.config.allowUnfree = true;
@@ -36,16 +37,23 @@
 
   users.users.lipe = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "kvm" ];
     packages = with pkgs; [];
   };
 
   environment.systemPackages = with pkgs; [
   ];
+
+  # QEMU/KVM virtual machines managed through libvirt.
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.package = pkgs.qemu_kvm;
+  };
   
   # Services
   services.openssh.enable = true;
   services.flatpak.enable = true;
+  services.udisks2.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;

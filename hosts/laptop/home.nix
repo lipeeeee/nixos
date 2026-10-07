@@ -37,6 +37,7 @@ in
     (M "system/bash.nix")
     (M "system/audio.nix")
     (M "system/hypridle.nix")
+    (M "system/udiskie.nix")
 
     (M "terminals/tmux.nix")
 
@@ -55,6 +56,7 @@ in
   home.packages = with pkgs;[
     # JUNK ::
     cmatrix
+    nvtopPackages.full
   ];
 
   home.sessionVariables = {
