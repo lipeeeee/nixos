@@ -31,6 +31,7 @@
       set -g status-right ""
       set -g status-right-length 50
       set -g status-left-length 20 
+      setw -g window-status-current-style default
       setw -g window-status-current-format ' #I#[fg=#252525]:#[fg=#d4d4d4]#W#[fg=#a89984]#F '
       setw -g window-status-format ' #I#[fg=#252525]:#[fg=#555555]#W#[fg=#252525]#F '
   
