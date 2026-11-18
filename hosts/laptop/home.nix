@@ -51,6 +51,7 @@ in
     # (M "dev/python-standard.nix")
 
     (M "projects/tribble.nix")
+    (M "projects/ldw.nix")
   ];
 
   home.packages = with pkgs;[
